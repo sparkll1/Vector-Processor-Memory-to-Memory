@@ -1,0 +1,23 @@
+RELPRIME:   li T0, 2
+			allo 2
+			sr 0
+LOOP2:      sv A0, 2
+			ori A1, T0, 0
+			jal GCD
+			ld A0, 2
+			beqi V0, 1, RETURN2
+			addi T0, T0, 1
+			j LOOP2
+RETURN2:    lr 0
+			free 2
+			ori V0, T0, 0
+		    fn
+GCD:        bnei A0, 0, LOOP
+		    rtm V0, A1
+LOOP:       beqi A1, 0, RETURN
+		    ble A0, A1, CASE2
+CASE1:      sub A0, A0, A1
+		    j LOOP
+CASE2:      sub A1, A1, A0
+		    j LOOP
+RETURN:     rtm V0, A0

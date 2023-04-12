@@ -1,2 +1,1 @@
-# MemtoMem-Processor
-Computer Architecture-Vector Processor
+Put design document and journals in the "design" directory.  Implementation, code, etc should go in the "implementation" directory.
